@@ -1,13 +1,20 @@
+@import './variables.css';
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: var(--spacing-xl);
   text-align: center;
+}
+
+body {
+  background: linear-gradient(135deg, rgba(119, 60, 195, 0.1) 0%, var(--scroll-color) 100%);
+  transition: background 0.3s ease;
 }
 
 .logo {
   height: 6em;
-  padding: 1.5em;
+  padding: var(--spacing-lg);
   will-change: filter;
   transition: filter 300ms;
 }
@@ -34,9 +41,39 @@
 }
 
 .card {
-  padding: 2em;
+  padding: var(--spacing-lg);
+  border-left: 4px solid var(--accent-color);
+  background: rgba(119, 60, 195, 0.02);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+}
+
+.card:hover {
+  border-left-color: var(--primary-color);
+  background: rgba(136, 195, 60, 0.05);
+  box-shadow: var(--shadow-lg);
 }
 
 .read-the-docs {
   color: #888;
+}
+
+button {
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--accent-color);
+  padding: 0.6em 1.2em;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  font-family: inherit;
+  background-color: transparent;
+  color: var(--accent-color);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+button:hover {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--bg-light);
+  box-shadow: 0 4px 12px rgba(119, 60, 195, 0.3);
 }
