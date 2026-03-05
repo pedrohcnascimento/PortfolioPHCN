@@ -1,8 +1,8 @@
 @import './variables.css';
 
 :root {
-  --primary-color: #773cc3;
-  --accent-color: #88c33c;
+  --primary-color: #10B981;
+  --accent-color: #3A5A40;
   
   font-family: var(--font-family);
   line-height: 1.5;
@@ -48,7 +48,7 @@ button {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #0B0F0C;
   cursor: pointer;
   transition: border-color var(--transition-fast);
 }

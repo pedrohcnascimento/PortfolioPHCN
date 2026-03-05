@@ -112,6 +112,10 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
+        <div className="scroll-indicator">
+          <span>Scroll Down</span>
+          <div className="arrow">↓</div>
+        </div>
       </section>
 
       {/* About Section */}

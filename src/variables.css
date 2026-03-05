@@ -1,20 +1,20 @@
 :root {
   /* Brand Colors */
-  --primary-color: #773cc3;
-  --accent-color: #88c33c;
+  --primary-color: #0ba773;
+  --accent-color: #446e4c;
   
   /* Neutral Colors */
-  --bg-dark: #1a1a1a;
+  --bg-dark: #0b0f0c;
   --bg-light: #ffffff;
   --text-light: rgba(255, 255, 255, 0.87);
   --text-dark: #213547;
   --border-color: #e0e0e0;
   
   /* Semantic Colors */
-  --success: #88c33c;
+  --success: #10B981;
   --warning: #f59e0b;
   --error: #ef4444;
-  --info: #773cc3;
+  --info: #3A5A40;
   
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);

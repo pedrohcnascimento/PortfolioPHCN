@@ -26,12 +26,15 @@ section.visible {
 
 /* Hero Section */
 .hero-section {
-  padding: var(--spacing-2xl) var(--spacing-xl);
+  padding: 0 var(--spacing-xl) var(--spacing-2xl);
   background: linear-gradient(135deg, rgba(119, 60, 195, 0.1) 0%, rgba(136, 195, 60, 0.1) 100%);
   margin-bottom: 0;
   min-height: 100vh;
   display: flex;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
 }
 
 .hero-content {
@@ -83,6 +86,30 @@ section.visible {
   color: var(--bg-light);
   box-shadow: var(--shadow-xl);
   animation: float 3s ease-in-out infinite;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: var(--spacing-xl);
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: var(--text-light);
+  font-size: var(--font-size-xl);
+  opacity: 0.8;
+  font-weight: var(--font-weight-medium);
+}
+
+.arrow {
+  font-size: var(--font-size-3xl);
+  margin-top: var(--spacing-sm);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
 }
 
 @keyframes float {
@@ -174,7 +201,7 @@ section.visible {
 
 /* Content Sections */
 .content-section {
-  padding: var(--spacing-2xl) 0;
+  padding: var(--spacing-2xl) var(--spacing-xl);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -208,6 +235,7 @@ section.visible {
 .about-content {
   max-width: 800px;
   margin: 0 auto;
+  padding: 0;
 }
 
 .about-text {
@@ -238,6 +266,7 @@ section.visible {
 }
 
 .skill-category {
+  /* lighter accent background for readability */
   background: rgba(26, 26, 26, 0.5);
   padding: var(--spacing-lg);
   border-radius: var(--radius-lg);
@@ -247,13 +276,13 @@ section.visible {
 
 .skill-category:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: var(--shadow-lg), 0 0 20px rgba(136, 195, 60, 0.2);
-  border-color: var(--accent-color);
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(58, 90, 64, 0.2);
+  border-color: var(--primary-color);
   animation: subtle-rotate 3s ease-in-out infinite;
 }
 
 .skill-category h3 {
-  color: var(--accent-color);
+  color: var(--text-light);
   font-size: var(--font-size-lg);
   margin-bottom: var(--spacing-md);
   font-weight: var(--font-weight-semibold);
@@ -266,22 +295,22 @@ section.visible {
 }
 
 .skill-tag {
-  background: rgba(136, 195, 60, 0.1);
-  color: var(--accent-color);
+  background: rgba(119, 60, 195, 0.1);
+  color: var(--primary-color);
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius-md);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
-  border: 1px solid rgba(136, 195, 60, 0.3);
+  border: 1px solid rgba(119, 60, 195, 0.3);
   transition: all var(--transition-fast);
   position: relative;
 }
 
 .skill-tag:hover {
-  background: var(--primary-color);
+  background: var(--accent-color);
   color: var(--text-light);
   transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(136, 195, 60, 0.5);
+  box-shadow: 0 0 12px rgba(119, 60, 195, 0.4);
 }
 
 /* Experience Section */
@@ -329,13 +358,13 @@ section.visible {
 }
 
 .experience-type.professional {
-  background: rgba(119, 60, 195, 0.2);
+  background: rgba(16, 185, 129, 0.2);
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
 }
 
 .experience-type.academic {
-  background: rgba(119, 60, 195, 0.2);
+  background: rgba(16, 185, 129, 0.2);
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
 }
@@ -393,7 +422,7 @@ section.visible {
 .experience-link {
   color: var(--accent-color);
   text-decoration: none;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   transition: all var(--transition-fast);
   display: inline-flex;
   align-items: center;
@@ -449,16 +478,15 @@ section.visible {
 }
 
 .education-status.completed {
-  background: rgba(136, 195, 60, 0.2);
-  color: var(--accent-color);
-  border: 1px solid var(--accent-color);
-  animation: glow-pulse 2s ease-in-out infinite;
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
 }
 
 .education-status.in-progress {
-  background: rgba(119, 60, 195, 0.2);
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+  border: 1px solid #f59e0b;
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
@@ -516,7 +544,7 @@ section.visible {
 .project-link {
   color: var(--accent-color);
   text-decoration: none;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   transition: all var(--transition-fast);
   display: inline-flex;
   align-items: center;
