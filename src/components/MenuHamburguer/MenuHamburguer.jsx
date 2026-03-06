@@ -3,6 +3,7 @@ import './MenuHamburguer.css';
 
 const MenuHamburguer = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuClosing, setIsMenuClosing] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
 
   const navItems = [
@@ -35,8 +36,25 @@ const MenuHamburguer = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
+  const toggleMenu = () => {
+    if (isMenuOpen) {
+      setIsMenuClosing(true);
+      setTimeout(() => {
+        setIsMenuOpen(false);
+        setIsMenuClosing(false);
+      }, 300); // Match the CSS animation duration
+    } else {
+      setIsMenuOpen(true);
+    }
+  };
+
+  const closeMenu = () => {
+    setIsMenuClosing(true);
+    setTimeout(() => {
+      setIsMenuOpen(false);
+      setIsMenuClosing(false);
+    }, 300); // Match the CSS animation duration
+  };
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -70,7 +88,7 @@ const MenuHamburguer = () => {
 
       {/* Menu Overlay */}
       {isMenuOpen && (
-        <div className="menu-overlay" onClick={closeMenu}>
+        <div className={`menu-overlay ${isMenuClosing ? 'closing' : ''}`} onClick={closeMenu}>
           <ul className="nav-menu" onClick={(e) => e.stopPropagation()}>
             {navItems.map((item) => (
               <li key={item.id} className="nav-item-wrapper">
