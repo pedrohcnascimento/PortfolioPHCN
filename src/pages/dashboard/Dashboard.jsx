@@ -10,7 +10,9 @@ export default function Dashboard() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          entry.target.classList.toggle('visible', entry.isIntersecting);
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
         });
       },
       { threshold: 0.15 }
@@ -98,6 +100,7 @@ export default function Dashboard() {
 
   return (
     <div className={`dashboard ${isVisible ? 'visible' : ''}`}>
+
       {/* Hero Section */}
       <section id="hero" className="hero-section">
         <div className="hero-content">
