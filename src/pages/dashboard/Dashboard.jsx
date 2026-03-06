@@ -3,8 +3,6 @@ import './Dashboard.css';
 
 export default function Dashboard() {
   const [isVisible, setIsVisible] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     setIsVisible(true);
@@ -14,7 +12,6 @@ export default function Dashboard() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            setActiveSection(entry.target.id);
           }
         });
       },
@@ -101,55 +98,8 @@ export default function Dashboard() {
     }
   ];
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
-
-  const navItems = [
-    { id: 'hero', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'education', label: 'Education' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'contact', label: 'Contact' }
-  ];
-
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    closeMenu();
-  };
-
   return (
     <div className={`dashboard ${isVisible ? 'visible' : ''}`}>
-      <nav className="navbar">
-        <div className="navbar-container">
-          <div className="navbar-logo" onClick={() => scrollToSection('hero')}>
-            PHCN
-          </div>
-          
-          <button className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu} aria-label="Menu">
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
-          </button>
-
-          <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-            {navItems.map((item) => (
-              <li key={item.id} className="nav-item-wrapper">
-                <button
-                  className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
-                  onClick={() => scrollToSection(item.id)}
-                >
-                  {item.label}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
 
       {/* Hero Section */}
       <section id="hero" className="hero-section">
