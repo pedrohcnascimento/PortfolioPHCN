@@ -1,16 +1,83 @@
-# React + Vite
+# 🌐 Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal developer portfolio built to showcase my projects, skills, and experience as a software developer.
 
-Currently, two official plugins are available:
+🔗 Live Website: https://portfoliophcn.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The goal of this project is to create a modern, responsive, and interactive platform where visitors can learn more about me, explore my projects, and get in touch.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# 🚀 Features
 
-## Expanding the ESLint configuration
+- Modern and responsive UI
+- Smooth navigation between sections
+- Projects showcase
+- Skills and technologies section
+- Contact section for communication
+- Optimized for desktop and mobile devices
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+# 🧑‍💻 About the Project
+
+This portfolio was designed to represent my journey as a developer and highlight the projects I have built.
+
+The website focuses on:
+
+- Clean design
+- Good user experience
+- Simple navigation
+- Clear presentation of projects and skills
+
+It serves as a central hub where recruiters, developers, and collaborators can learn more about my work.
+
+---
+
+# 🛠 Technologies Used
+
+The project was built using modern web development technologies such as:
+
+- HTML
+- CSS
+- JavaScript
+- React / Next.js
+- Tailwind CSS
+- Vercel (deployment)
+
+---
+
+# 📂 Sections
+
+### Home
+Introduction and quick presentation.
+
+### About
+Information about my background, interests, and journey in software development.
+
+### Projects
+A collection of projects I have worked on, demonstrating my technical abilities and problem-solving skills.
+
+### Skills
+Technologies and tools I use for development.
+
+### Contact
+Ways to get in touch with me.
+
+---
+
+# 📸 Preview
+
+![Portfolio Preview](./public/preview.png)
+
+---
+
+# 📦 Installation
+
+If you want to run this project locally:
+
+```bash
+git clone https://github.com/yourusername/portfolio
+cd portfolio
+npm install
+npm run dev
