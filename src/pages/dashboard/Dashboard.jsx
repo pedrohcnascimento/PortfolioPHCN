@@ -302,7 +302,7 @@ export default function Dashboard() {
             <div className="contact-icon">💼</div>
             <div className="contact-info">
               <h3>LinkedIn</h3>
-              <a href="https://linkedin.com/in/pedrohcnascimento" target="_blank" rel="noopener noreferrer">Pedro H.</a>
+              <a href="https://www.linkedin.com/in/pedrohenriquecn07/" target="_blank" rel="noopener noreferrer">Pedro H.</a>
             </div>
           </div>
           <div className="contact-item">

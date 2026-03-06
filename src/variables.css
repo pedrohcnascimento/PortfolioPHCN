@@ -1,7 +1,7 @@
 :root {
   /* Brand Colors */
-  --primary-color: #0ba773;
-  --accent-color: #446e4c;
+  --primary-color: #10B981;
+  --accent-color: #3A5A40;
   
   /* Neutral Colors */
   --bg-dark: #0b0f0c;
@@ -16,11 +16,23 @@
   --error: #ef4444;
   --info: #3A5A40;
   
+  /* Backgrounds */
+  --bg-card: rgba(26, 26, 26, 0.5);
+  --bg-card-hover: rgba(26, 26, 26, 0.7);
+  --bg-accent-light: rgba(16, 185, 129, 0.1);
+  --bg-accent-medium: rgba(58, 90, 64, 0.1);
+  --bg-body-gradient: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(58, 90, 64, 0.1) 100%);
+  
+  /* Borders */
+  --border-card: rgba(255, 255, 255, 0.1);
+  --border-accent: rgba(16, 185, 129, 0.3);
+  
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 12px rgba(119, 60, 195, 0.15);
-  --shadow-lg: 0 8px 24px rgba(119, 60, 195, 0.2);
-  --shadow-xl: 0 12px 32px rgba(119, 60, 195, 0.25);
+  --shadow-md: 0 4px 12px rgba(16, 185, 129, 0.15);
+  --shadow-lg: 0 8px 24px rgba(16, 185, 129, 0.2);
+  --shadow-xl: 0 12px 32px rgba(16, 185, 129, 0.25);
+  --shadow-accent: 0 0 20px rgba(16, 185, 129, 0.3);
   
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -38,6 +50,12 @@
   
   /* Typography */
   --font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --line-height: 1.5;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
@@ -46,12 +64,6 @@
   --font-size-2xl: 1.5rem;
   --font-size-3xl: 2rem;
   
-  --font-weight-light: 300;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  
   /* Transitions */
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -59,5 +71,13 @@
   
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-  --gradient-bg-subtle: linear-gradient(135deg, rgba(119, 60, 195, 0.05) 0%, rgba(136, 195, 60, 0.05) 100%);
+  --gradient-bg-subtle: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(58, 90, 64, 0.05) 100%);
+  
+  /* Global Styles */
+  color: var(--text-light);
+  background-color: var(--bg-dark);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
