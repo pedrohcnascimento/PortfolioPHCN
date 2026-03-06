@@ -41,7 +41,7 @@ const MenuHamburguer = () => {
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80; // Altura da navbar
+      const offset = 0;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -56,32 +56,36 @@ const MenuHamburguer = () => {
   };
 
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <div className="navbar-logo" onClick={() => scrollToSection('hero')}>
-          PHCN
-        </div>
-        
-        <button className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu} aria-label="Menu">
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </button>
+    <>
+      {/* Floating Hamburger Button */}
+      <button 
+        className={`floating-hamburger ${isMenuOpen ? 'active' : ''}`} 
+        onClick={toggleMenu} 
+        aria-label="Menu"
+      >
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </button>
 
-        <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-          {navItems.map((item) => (
-            <li key={item.id} className="nav-item-wrapper">
-              <button
-                className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
-                onClick={() => scrollToSection(item.id)}
-              >
-                {item.label}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </nav>
+      {/* Menu Overlay */}
+      {isMenuOpen && (
+        <div className="menu-overlay" onClick={closeMenu}>
+          <ul className="nav-menu" onClick={(e) => e.stopPropagation()}>
+            {navItems.map((item) => (
+              <li key={item.id} className="nav-item-wrapper">
+                <button
+                  className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+                  onClick={() => scrollToSection(item.id)}
+                >
+                  {item.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </>
   );
 };
 
