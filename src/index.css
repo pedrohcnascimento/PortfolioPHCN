@@ -1,16 +1,13 @@
 @import './variables.css';
 
 :root {
-  --primary-color: #10B981;
-  --accent-color: #3A5A40;
-  
   font-family: var(--font-family);
   line-height: 1.5;
   font-weight: var(--font-weight-normal);
 
   color-scheme: light dark;
-  color: var(--text-light);
-  background-color: var(--bg-dark);
+  color: var(--text-main);
+  background-color: var(--bg-main);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -60,15 +57,4 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+/* O modo claro é controlado pela classe .light-mode no body ou html */

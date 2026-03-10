@@ -16,12 +16,24 @@
   --error: #ef4444;
   --info: #3A5A40;
   
+  /* Theme Specific Colors */
+  --color-purple-glow: rgba(119, 60, 195, 0.4);
+  --color-green-glow: rgba(136, 195, 60, 0.3);
+  --color-skill-tag-bg: rgba(119, 60, 195, 0.1);
+  --color-skill-tag-border: rgba(119, 60, 195, 0.3);
+  --color-exp-type-bg: rgba(16, 185, 129, 0.2);
+  
   /* Backgrounds */
+  --bg-main: var(--bg-dark);
   --bg-card: rgba(26, 26, 26, 0.5);
   --bg-card-hover: rgba(26, 26, 26, 0.7);
   --bg-accent-light: rgba(16, 185, 129, 0.1);
   --bg-accent-medium: rgba(58, 90, 64, 0.1);
   --bg-body-gradient: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(58, 90, 64, 0.1) 100%);
+  --bg-hero: linear-gradient(135deg, rgba(119, 60, 195, 0.1) 0%, rgba(136, 195, 60, 0.1) 100%);
+  
+  /* Text */
+  --text-main: var(--text-light);
   
   /* Borders */
   --border-card: rgba(255, 255, 255, 0.1);
@@ -74,10 +86,35 @@
   --gradient-bg-subtle: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(58, 90, 64, 0.05) 100%);
   
   /* Global Styles */
-  color: var(--text-light);
-  background-color: var(--bg-dark);
+  color: var(--text-main);
+  background-color: var(--bg-main);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.light-mode {
+  --primary-color: #059669;
+  --accent-color: #7c3aed;
+  --bg-main: #f8fafc;
+  --text-main: #1f2937;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  --border-card: rgba(124, 58, 237, 0.15);
+  --bg-body-gradient: linear-gradient(135deg, #f0fdf4 0%, #f5f3ff 100%);
+  --bg-hero: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(5, 150, 105, 0.08) 100%);
+  --text-light: #1f2937;
+  --bg-light: #ffffff;
+  --shadow-sm: 0 2px 8px rgba(124, 58, 237, 0.08);
+  --shadow-md: 0 4px 12px rgba(124, 58, 237, 0.12);
+  --shadow-lg: 0 8px 24px rgba(124, 58, 237, 0.15);
+  --shadow-xl: 0 12px 32px rgba(124, 58, 237, 0.18);
+  --shadow-accent: 0 0 20px rgba(124, 58, 237, 0.15);
+  --color-purple-glow: rgba(124, 58, 237, 0.25);
+  --color-green-glow: rgba(5, 150, 105, 0.2);
+  --color-skill-tag-bg: rgba(124, 58, 237, 0.08);
+  --color-skill-tag-border: rgba(124, 58, 237, 0.25);
+  --color-exp-type-bg: rgba(5, 150, 105, 0.12);
+  --border-accent: rgba(124, 58, 237, 0.3);
 }

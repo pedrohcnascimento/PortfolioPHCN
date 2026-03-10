@@ -1,10 +1,9 @@
 @import '../../variables.css';
 
-/* Floating container */
-.language-switch {
+.theme-switch {
   position: fixed;
   top: 20px;
-  right: 20px;
+  right: 90px; /* Ao lado do LanguageSwitcher */
 
   width: 60px;
   height: 30px;
@@ -27,14 +26,12 @@
   z-index: 1001;
 }
 
-/* Hover similar to hamburger */
-.language-switch:hover {
+.theme-switch:hover {
   transform: scale(1.05);
   border-color: var(--accent-color);
 }
 
-/* Slider */
-.switch-slider {
+.theme-slider {
   width: 24px;
   height: 24px;
 
@@ -49,18 +46,15 @@
   transition: transform 0.3s ease;
 }
 
-/* English position */
-.switch-slider.en {
+.theme-slider.dark {
   transform: translateX(0px);
 }
 
-/* Portuguese position */
-.switch-slider.pt {
+.theme-slider.light {
   transform: translateX(30px);
 }
 
-/* Flag styling */
-.flag {
+.theme-icon {
   font-size: 14px;
   line-height: 1;
 }
