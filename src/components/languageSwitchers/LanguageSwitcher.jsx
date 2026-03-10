@@ -1,5 +1,5 @@
 import { useLanguage } from "../../context/LanguageContext";
-import "./LanguageSwitcher.css";
+import "../languageSwitchers/LanguageSwitcher.css";
 
 export default function LanguageSwitcher() {
   const { language, toggleLanguage } = useLanguage();
