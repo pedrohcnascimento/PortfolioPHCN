@@ -14,9 +14,7 @@ export default function Dashboard() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
+          if (entry.isIntersecting) entry.target.classList.add('visible');
         });
       },
       { threshold: 0.15 }
@@ -36,25 +34,6 @@ export default function Dashboard() {
     concepts: ['Back-end Development', 'Front-end Development', 'Digital Environment Routines']
   };
 
-  const experiences = [ { technologies: ['React', 'Spring Boot', 'JavaScript', 'Java'], links: { backend: 'https://github.com/Arthur2060/Inpark-backend', frontend: 'https://github.com/DiegoGenuino/frontend-inpark' } } ];
-
-  const projects = [
-    {
-      link: 'https://github.com/pedrohcnascimento/ProjectAurora',
-      technologies: ['Python']
-    },
-    {
-      link: 'https://github.com/Arthur2060/Inpark-backend',
-      technologies: ['Java', 'Spring Boot']
-    },
-    {
-      link: 'https://github.com/DiegoGenuino/frontend-inpark',
-      technologies: ['React', 'JavaScript']
-    }
-  ];
-
-  const education = [];
-
   return (
     <div className={`dashboard ${isVisible ? 'visible' : ''}`}>
 
@@ -67,13 +46,11 @@ export default function Dashboard() {
             <p className="hero-location">📍 {t.hero.location}</p>
           </div>
           <div className="hero-image">
-            <div className="profile-placeholder">
-              <span>PHCN</span>
-            </div>
+            <div className="profile-placeholder"><span>PHCN</span></div>
           </div>
         </div>
         <div className="scroll-indicator">
-          <span>{t.hero.scroll} </span>
+          <span>{t.hero.scroll}</span>
           <div className="arrow">↓</div>
         </div>
       </section>
@@ -85,12 +62,8 @@ export default function Dashboard() {
           <div className="section-divider"></div>
         </div>
         <div className="about-content">
-          <p className="about-text">
-            {t.about.text1}
-          </p>
-          <p className="about-text">
-            {t.about.text2}
-          </p>
+          <p className="about-text">{t.about.text1}</p>
+          <p className="about-text">{t.about.text2}</p>
           <div className="interests-section">
             <h3>{t.about.interestsTitle}</h3>
             <p>{t.about.interestsText}</p>
@@ -105,46 +78,14 @@ export default function Dashboard() {
           <div className="section-divider"></div>
         </div>
         <div className="skills-grid">
-          <div className="skill-category">
-            <h3>{t.skills.languages}</h3>
-            <div className="skill-tags">
-              {skills.languages.map((skill, index) => (
-                <span key={index} className="skill-tag">{skill}</span>
-              ))}
+          {Object.entries(skills).map(([category, skillList]) => (
+            <div key={category} className="skill-category">
+              <h3>{t.skills[category]}</h3>
+              <div className="skill-tags">
+                {skillList.map((skill, idx) => <span key={idx} className="skill-tag">{skill}</span>)}
+              </div>
             </div>
-          </div>
-          <div className="skill-category">
-            <h3>{t.skills.frameworks}</h3>
-            <div className="skill-tags">
-              {skills.frameworks.map((skill, index) => (
-                <span key={index} className="skill-tag">{skill}</span>
-              ))}
-            </div>
-          </div>
-          <div className="skill-category">
-            <h3>{t.skills.tools}</h3>
-            <div className="skill-tags">
-              {skills.tools.map((skill, index) => (
-                <span key={index} className="skill-tag">{skill}</span>
-              ))}
-            </div>
-          </div>
-          <div className="skill-category">
-            <h3>{t.skills.methodologies}</h3>
-            <div className="skill-tags">
-              {skills.methodologies.map((skill, index) => (
-                <span key={index} className="skill-tag">{skill}</span>
-              ))}
-            </div>
-          </div>
-          <div className="skill-category">
-            <h3>{t.skills.concepts}</h3>
-            <div className="skill-tags">
-              {skills.concepts.map((skill, index) => (
-                <span key={index} className="skill-tag">{skill}</span>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -155,19 +96,19 @@ export default function Dashboard() {
           <div className="section-divider"></div>
         </div>
         <div className="experience-grid">
-          {experiences.map((exp, index) => (
+          {t.experience.items.map((exp, index) => (
             <div key={index} className="experience-card">
               <div className="experience-header">
-                <h3>{t.experience.items[index].title}</h3>
-                <span className={`experience-type ${t.experience.items[index].type}`}>{t.experience.items[index].type}</span>
+                <h3>{exp.title}</h3>
+                <span className={`experience-type ${exp.type}`}>{exp.type}</span>
               </div>
               <div className="experience-meta">
-                <span className="company">{t.experience.items[index].company}</span>
-                <span className="period">{t.experience.items[index].period}</span>
+                <span className="company">{exp.company}</span>
+                <span className="period">{exp.period}</span>
               </div>
-              <p className="experience-description">{t.experience.items[index].description}</p>
+              <p className="experience-description">{exp.description}</p>
               <div className="experience-tech">
-                {exp.technologies.map((tech, techIndex) => (
+                {(exp.technologies || []).map((tech, techIndex) => (
                   <span key={techIndex} className="tech-tag">{tech}</span>
                 ))}
               </div>
@@ -179,12 +120,16 @@ export default function Dashboard() {
                 )}
                 {exp.links && (
                   <div className="project-links">
-                    <a href={exp.links.backend} target="_blank" rel="noopener noreferrer" className="experience-link">
-                      {t.experience.backend}
-                    </a>
-                    <a href={exp.links.frontend} target="_blank" rel="noopener noreferrer" className="experience-link">
-                      {t.experience.frontend}
-                    </a>
+                    {exp.links.backend && (
+                      <a href={exp.links.backend} target="_blank" rel="noopener noreferrer" className="experience-link">
+                        {t.experience.backend}
+                      </a>
+                    )}
+                    {exp.links.frontend && (
+                      <a href={exp.links.frontend} target="_blank" rel="noopener noreferrer" className="experience-link">
+                        {t.experience.frontend}
+                      </a>
+                    )}
                   </div>
                 )}
               </div>
@@ -200,15 +145,15 @@ export default function Dashboard() {
           <div className="section-divider"></div>
         </div>
         <div className="education-grid">
-          {education.map((edu, index) => (
+          {t.education.items.map((edu, index) => (
             <div key={index} className="education-card">
               <div className="education-header">
-                <h3>{t.education.items[index].title}</h3>
-                <span className={`education-status ${t.education.items[index].status.toLowerCase()}`}>{t.education.items[index].status}</span>
+                <h3>{edu.title}</h3>
+                <span className={`education-status ${edu.status.toLowerCase()}`}>{edu.status}</span>
               </div>
               <div className="education-meta">
-                <span className="institution">{t.education.items[index].institution}</span>
-                <span className="period">{t.education.items[index].period}</span>
+                <span className="institution">{edu.institution}</span>
+                <span className="period">{edu.period}</span>
               </div>
             </div>
           ))}
@@ -222,14 +167,14 @@ export default function Dashboard() {
           <div className="section-divider"></div>
         </div>
         <div className="projects-grid">
-          {projects.map((project, index) => (
+          {t.projects.items.map((project, index) => (
             <div key={index} className="project-card">
               <div className="project-header">
-                <h3>{t.projects.items[index].title}</h3>
+                <h3>{project.title}</h3>
               </div>
-              <p className="project-description">{t.projects.items[index].description}</p>
+              <p className="project-description">{project.description}</p>
               <div className="project-tech">
-                {project.technologies.map((tech, techIndex) => (
+                {(project.technologies || []).map((tech, techIndex) => (
                   <span key={techIndex} className="tech-tag">{tech}</span>
                 ))}
               </div>
