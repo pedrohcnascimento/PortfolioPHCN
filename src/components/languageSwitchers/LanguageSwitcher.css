@@ -1,0 +1,66 @@
+@import '../../variables.css';
+
+/* Floating container */
+.language-switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  width: 60px;
+  height: 30px;
+
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.15);
+
+  background: rgba(26,26,26,0.85);
+  backdrop-filter: blur(6px);
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  padding: 3px;
+
+  transition: all var(--transition-normal);
+
+  z-index: 1001;
+}
+
+/* Hover similar to hamburger */
+.language-switch:hover {
+  transform: scale(1.05);
+  border-color: var(--accent-color);
+}
+
+/* Slider */
+.switch-slider {
+  width: 24px;
+  height: 24px;
+
+  background: var(--accent-color);
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.3s ease;
+}
+
+/* English position */
+.switch-slider.en {
+  transform: translateX(0px);
+}
+
+/* Portuguese position */
+.switch-slider.pt {
+  transform: translateX(30px);
+}
+
+/* Flag styling */
+.flag {
+  font-size: 14px;
+  line-height: 1;
+}

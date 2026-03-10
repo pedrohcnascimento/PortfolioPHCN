@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../translations/translations";
 
 export default function Dashboard() {
   const [isVisible, setIsVisible] = useState(false);
+  const { language } = useLanguage();
+  const t = translations[language];
 
   useEffect(() => {
     setIsVisible(true);
@@ -32,71 +36,24 @@ export default function Dashboard() {
     concepts: ['Back-end Development', 'Front-end Development', 'Digital Environment Routines']
   };
 
-  const experiences = [
-    {
-      type: 'professional',
-      title: 'Project Aurora',
-      company: 'Freelance (Data Curve.ai)',
-      period: 'August 2025 - October 2025',
-      description: 'Freelance project using Python to create real-world software development problems and solutions. An AI system would attempt to solve these problems 10 times, with a target success rate of at most 30%. Each properly executed problem was saved in the company\'s database and later sold to other companies interested in training or improving their AIs.',
-      technologies: ['Python'],
-      link: 'https://github.com/pedrohcnascimento/ProjectAurora'
-    },
-    {
-      type: 'academic',
-      title: 'Inpark',
-      company: 'SENAI Technical Course Project',
-      period: 'July 2025 - Present',
-      description: 'Final technical course project with 6 members. Our solution operates on two fronts: simplifying the daily routine of drivers looking for parking quickly and with reliable information, and driving the growth and digitalization of local parking facilities. I was responsible for the project idea, team organization, and development of tests (both back-end and front-end).',
-      technologies: ['React', 'Spring Boot', 'JavaScript', 'Java'],
-      links: {
-        backend: 'https://github.com/Arthur2060/Inpark-backend',
-        frontend: 'https://github.com/DiegoGenuino/frontend-inpark'
-      }
-    }
-  ];
-
-  const education = [
-    {
-      title: 'Analysis and Software Development',
-      institution: 'FIAP',
-      period: 'Expected completion: December 2027',
-      status: 'In-Progress'
-    },
-    {
-      title: 'Technical Course in Software Development',
-      institution: 'SENAI Anchieta School',
-      period: 'Completed: December 2025',
-      status: 'Completed'
-    },
-    {
-      title: 'Fluent English',
-      institution: 'EF Education First',
-      period: 'Completed: November 2024',
-      status: 'Completed'
-    }
-  ];
+  const experiences = [ { technologies: ['React', 'Spring Boot', 'JavaScript', 'Java'], links: { backend: 'https://github.com/Arthur2060/Inpark-backend', frontend: 'https://github.com/DiegoGenuino/frontend-inpark' } } ];
 
   const projects = [
     {
-      title: 'Project Aurora',
-      description: 'Exercises for AI training databases',
       link: 'https://github.com/pedrohcnascimento/ProjectAurora',
       technologies: ['Python']
     },
     {
-      title: 'Inpark Backend',
-      description: 'Backend for a parking management system',
       link: 'https://github.com/Arthur2060/Inpark-backend',
       technologies: ['Java', 'Spring Boot']
     },
     {
-      title: 'Inpark Frontend',
-      description: 'Frontend for a parking management system',
       link: 'https://github.com/DiegoGenuino/frontend-inpark',
       technologies: ['React', 'JavaScript']
     }
   ];
+
+  const education = [];
 
   return (
     <div className={`dashboard ${isVisible ? 'visible' : ''}`}>
@@ -105,9 +62,9 @@ export default function Dashboard() {
       <section id="hero" className="hero-section">
         <div className="hero-content">
           <div className="hero-text">
-            <h1 className="hero-title">Pedro Henrique Carvalho do Nascimento</h1>
-            <p className="hero-subtitle">Full-Stack Developer & Systems Development Student</p>
-            <p className="hero-location">📍 São Paulo, Brazil</p>
+            <h1 className="hero-title">{t.hero.title}</h1>
+            <p className="hero-subtitle">{t.hero.subtitle}</p>
+            <p className="hero-location">📍 {t.hero.location}</p>
           </div>
           <div className="hero-image">
             <div className="profile-placeholder">
@@ -116,7 +73,7 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="scroll-indicator">
-          <span>Scroll Down</span>
+          <span>{t.hero.scroll} </span>
           <div className="arrow">↓</div>
         </div>
       </section>
@@ -124,22 +81,19 @@ export default function Dashboard() {
       {/* About Section */}
       <section id="about" className="content-section about-section">
         <div className="section-header">
-          <h2>About Me</h2>
+          <h2>{t.about.title}</h2>
           <div className="section-divider"></div>
         </div>
         <div className="about-content">
           <p className="about-text">
-            I am a dedicated and enthusiastic young professional currently pursuing a technical degree in Systems Development.
-            I am fluent in English and have strong knowledge of full-stack programming. Additionally, I have hands-on experience
-            with version control using Git/GitHub and familiarity with Microsoft Copilot, as well as programming tools such as
-            IntelliJ and VSCode.
+            {t.about.text1}
           </p>
           <p className="about-text">
-            I am seeking my first professional opportunity to apply my quick learning ability and passion for technology.
+            {t.about.text2}
           </p>
           <div className="interests-section">
-            <h3>Interests</h3>
-            <p>🎵 Passionate about music (studying music theory and singing), demonstrating dedication and discipline.</p>
+            <h3>{t.about.interestsTitle}</h3>
+            <p>{t.about.interestsText}</p>
           </div>
         </div>
       </section>
@@ -147,12 +101,12 @@ export default function Dashboard() {
       {/* Skills Section */}
       <section id="skills" className="content-section skills-section">
         <div className="section-header">
-          <h2>Technical Skills</h2>
+          <h2>{t.skills.title}</h2>
           <div className="section-divider"></div>
         </div>
         <div className="skills-grid">
           <div className="skill-category">
-            <h3>Programming Languages</h3>
+            <h3>{t.skills.languages}</h3>
             <div className="skill-tags">
               {skills.languages.map((skill, index) => (
                 <span key={index} className="skill-tag">{skill}</span>
@@ -160,7 +114,7 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="skill-category">
-            <h3>Frameworks & Libraries</h3>
+            <h3>{t.skills.frameworks}</h3>
             <div className="skill-tags">
               {skills.frameworks.map((skill, index) => (
                 <span key={index} className="skill-tag">{skill}</span>
@@ -168,7 +122,7 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="skill-category">
-            <h3>Tools & Technologies</h3>
+            <h3>{t.skills.tools}</h3>
             <div className="skill-tags">
               {skills.tools.map((skill, index) => (
                 <span key={index} className="skill-tag">{skill}</span>
@@ -176,7 +130,7 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="skill-category">
-            <h3>Agile Methodologies</h3>
+            <h3>{t.skills.methodologies}</h3>
             <div className="skill-tags">
               {skills.methodologies.map((skill, index) => (
                 <span key={index} className="skill-tag">{skill}</span>
@@ -184,7 +138,7 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="skill-category">
-            <h3>Core Concepts</h3>
+            <h3>{t.skills.concepts}</h3>
             <div className="skill-tags">
               {skills.concepts.map((skill, index) => (
                 <span key={index} className="skill-tag">{skill}</span>
@@ -197,21 +151,21 @@ export default function Dashboard() {
       {/* Experience Section */}
       <section id="experience" className="content-section experience-section">
         <div className="section-header">
-          <h2>Experience</h2>
+          <h2>{t.experience.title}</h2>
           <div className="section-divider"></div>
         </div>
         <div className="experience-grid">
           {experiences.map((exp, index) => (
             <div key={index} className="experience-card">
               <div className="experience-header">
-                <h3>{exp.title}</h3>
-                <span className={`experience-type ${exp.type}`}>{exp.type}</span>
+                <h3>{t.experience.items[index].title}</h3>
+                <span className={`experience-type ${t.experience.items[index].type}`}>{t.experience.items[index].type}</span>
               </div>
               <div className="experience-meta">
-                <span className="company">{exp.company}</span>
-                <span className="period">{exp.period}</span>
+                <span className="company">{t.experience.items[index].company}</span>
+                <span className="period">{t.experience.items[index].period}</span>
               </div>
-              <p className="experience-description">{exp.description}</p>
+              <p className="experience-description">{t.experience.items[index].description}</p>
               <div className="experience-tech">
                 {exp.technologies.map((tech, techIndex) => (
                   <span key={techIndex} className="tech-tag">{tech}</span>
@@ -220,16 +174,16 @@ export default function Dashboard() {
               <div className="experience-links">
                 {exp.link && (
                   <a href={exp.link} target="_blank" rel="noopener noreferrer" className="experience-link">
-                    View Project →
+                    {t.experience.viewProject}
                   </a>
                 )}
                 {exp.links && (
                   <div className="project-links">
                     <a href={exp.links.backend} target="_blank" rel="noopener noreferrer" className="experience-link">
-                      Backend →
+                      {t.experience.backend}
                     </a>
                     <a href={exp.links.frontend} target="_blank" rel="noopener noreferrer" className="experience-link">
-                      Frontend →
+                      {t.experience.frontend}
                     </a>
                   </div>
                 )}
@@ -242,19 +196,19 @@ export default function Dashboard() {
       {/* Education Section */}
       <section id="education" className="content-section education-section">
         <div className="section-header">
-          <h2>Education & Courses</h2>
+          <h2>{t.education.title}</h2>
           <div className="section-divider"></div>
         </div>
         <div className="education-grid">
           {education.map((edu, index) => (
             <div key={index} className="education-card">
               <div className="education-header">
-                <h3>{edu.title}</h3>
-                <span className={`education-status ${edu.status.toLowerCase()}`}>{edu.status}</span>
+                <h3>{t.education.items[index].title}</h3>
+                <span className={`education-status ${t.education.items[index].status.toLowerCase()}`}>{t.education.items[index].status}</span>
               </div>
               <div className="education-meta">
-                <span className="institution">{edu.institution}</span>
-                <span className="period">{edu.period}</span>
+                <span className="institution">{t.education.items[index].institution}</span>
+                <span className="period">{t.education.items[index].period}</span>
               </div>
             </div>
           ))}
@@ -264,23 +218,23 @@ export default function Dashboard() {
       {/* Projects Section */}
       <section id="projects" className="content-section projects-section">
         <div className="section-header">
-          <h2>Projects</h2>
+          <h2>{t.projects.title}</h2>
           <div className="section-divider"></div>
         </div>
         <div className="projects-grid">
           {projects.map((project, index) => (
             <div key={index} className="project-card">
               <div className="project-header">
-                <h3>{project.title}</h3>
+                <h3>{t.projects.items[index].title}</h3>
               </div>
-              <p className="project-description">{project.description}</p>
+              <p className="project-description">{t.projects.items[index].description}</p>
               <div className="project-tech">
                 {project.technologies.map((tech, techIndex) => (
                   <span key={techIndex} className="tech-tag">{tech}</span>
                 ))}
               </div>
               <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                View on GitHub →
+                {t.projects.viewGithub}
               </a>
             </div>
           ))}
@@ -290,7 +244,7 @@ export default function Dashboard() {
       {/* Contact Section */}
       <section id="contact" className="content-section contact-section">
         <div className="section-header">
-          <h2>Contact Information</h2>
+          <h2>{t.contact.title}</h2>
           <div className="section-divider"></div>
         </div>
         <div className="contact-grid">
@@ -318,7 +272,7 @@ export default function Dashboard() {
           <div className="contact-item">
             <div className="contact-icon">📍</div>
             <div className="contact-info">
-              <h3>Location</h3>
+              <h3>{t.contact.location}</h3>
               <span>São Paulo, Brazil</span>
             </div>
           </div>
