@@ -66,12 +66,6 @@ Ways to get in touch with me.
 
 ---
 
-# 📸 Preview
-
-![Portfolio Preview](./public/preview.png)
-
----
-
 # 📦 Installation
 
 If you want to run this project locally:
