@@ -38,7 +38,7 @@ export const translations = {
           company: "Freelance (Data Curve.ai)",
           period: "August 2025 - October 2025",
           description:
-            "Freelance project using Python to create real-world software development problems and solutions. An AI system would attempt to solve these problems 10 times, with a target success rate of at most 30%. Each properly executed problem was saved in the company's database and later sold to other companies interested in training or improving their AIs.",
+            "Freelance project using Python to create real-world software development problems and solutions. An AI system would attempt to solve these problems 10 times, with a target success rate of at most 30%. Each properly executed problem was saved in the company's database and later sold to other companies interested in training or improving their AIs."
         },
         {
           type: "academic",
@@ -46,7 +46,7 @@ export const translations = {
           company: "SENAI Technical Course Project",
           period: "July 2025 - Present",
           description:
-            "Final technical course project with 6 members. Our solution operates on two fronts: simplifying the daily routine of drivers looking for parking quickly and with reliable information, and driving the growth and digitalization of local parking facilities. I was responsible for the project idea, team organization, and development of tests (both back-end and front-end).",
+            "Final technical course project with 6 members. Our solution operates on two fronts: simplifying the daily routine of drivers looking for parking quickly and with reliable information, and driving the growth and digitalization of local parking facilities. I was responsible for the project idea, team organization, and development of tests (both back-end and front-end)."
         },
       ],
     },
@@ -82,14 +82,17 @@ export const translations = {
         {
           title: "Project Aurora",
           description: "Exercises for AI training databases",
+          link: "https://github.com/pedrohcnascimento/ProjectAurora"
         },
         {
           title: "Inpark Backend",
           description: "Backend for a parking management system",
+          link: "https://github.com/Arthur2060/Inpark-backend"
         },
         {
           title: "Inpark Frontend",
           description: "Frontend for a parking management system",
+          link: "https://github.com/DiegoGenuino/frontend-inpark"
         },
       ],
     },
@@ -179,16 +182,19 @@ export const translations = {
         {
           title: "Project Aurora",
           description: "Exercícios para banco de dados de treinamento de IA",
+          link: "https://github.com/pedrohcnascimento/ProjectAurora"
         },
         {
           title: "Inpark Backend",
           description:
             "Backend para um sistema de gerenciamento de estacionamentos",
+          link: "https://github.com/Arthur2060/Inpark-backend"
         },
         {
           title: "Inpark Frontend",
           description:
             "Frontend para um sistema de gerenciamento de estacionamentos",
+          link: "https://github.com/DiegoGenuino/frontend-inpark"
         },
       ],
     },
