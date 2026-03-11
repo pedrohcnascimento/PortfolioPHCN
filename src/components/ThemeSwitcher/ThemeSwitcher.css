@@ -24,6 +24,20 @@
   transition: all var(--transition-normal);
 
   z-index: 1001;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .theme-switch {
+    top: 15px;
+    right: 75px;
+    width: 54px;
+    height: 28px;
+  }
+  
+  .theme-slider.light {
+    transform: translateX(26px);
+  }
 }
 
 .theme-switch:hover {

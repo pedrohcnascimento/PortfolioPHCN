@@ -25,6 +25,20 @@
   transition: all var(--transition-normal);
 
   z-index: 1001;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .language-switch {
+    top: 15px;
+    right: 15px;
+    width: 54px;
+    height: 28px;
+  }
+  
+  .switch-slider.pt {
+    transform: translateX(26px);
+  }
 }
 
 /* Hover similar to hamburger */
