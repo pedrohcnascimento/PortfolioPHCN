@@ -2,7 +2,7 @@ export const translations = {
   en: {
     hero: {
       title: "Pedro Henrique Carvalho do Nascimento",
-      subtitle: "Full-Stack Developer & Systems Development Student",
+      subtitle: "Back-end Developer & Systems Development Student",
       location: "São Paulo, Brazil",
       scroll: "Scroll Down",
     },
@@ -11,18 +11,17 @@ export const translations = {
       text1:
         "I am a dedicated and enthusiastic young professional currently pursuing a technical degree in Systems Development. I am fluent in English and have strong knowledge of full-stack programming. Additionally, I have hands-on experience with version control using Git/GitHub and familiarity with Microsoft Copilot, as well as programming tools such as IntelliJ and VSCode.",
       text2:
-        "I am seeking my first professional opportunity to apply my quick learning ability and passion for technology.",
+        "I have a preference for back-end development, but as you can see, I can also develop simple front-end projects. Currently, I am seeking my first professional opportunity in the technology sector to apply my fast learning ability and my passion for technology.",
       interestsTitle: "Interests",
       interestsText:
-        "🎵 Passionate about music (studying music theory and singing), demonstrating dedication and discipline.",
+        "I am very passionate about music; at the moment I am studying music theory and singing in my church choir. I also enjoy playing games and learning new things in general, especially when they are related to technology. Additionally, I play tabletop RPGs — I really enjoy creating stories, and it's fun to challenge my friends while also being challenged by them.",
     },
     skills: {
       title: "Technical Skills",
       languages: "Programming Languages",
       frameworks: "Frameworks & Libraries",
       tools: "Tools & Technologies",
-      methodologies: "Agile Methodologies",
-      concepts: "Fundamental Concepts",
+      methodologies: "Methodologies",
     },
     experience: {
       title: "Experience",
@@ -116,10 +115,10 @@ export const translations = {
       text1:
         "Sou um jovem profissional dedicado e entusiasmado, atualmente cursando uma formação técnica em Desenvolvimento de Sistemas. Sou fluente em inglês e possuo sólido conhecimento em programação full-stack. Além disso, tenho experiência prática com controle de versão utilizando Git/GitHub e familiaridade com Microsoft Copilot, bem como ferramentas de programação como IntelliJ e VSCode.",
       text2:
-        "Estou em busca da minha primeira oportunidade profissional para aplicar minha capacidade de aprendizado rápido e minha paixão por tecnologia.",
+        "Tenho preferência pelo desenvolvimento back-end, mas como você pode ver, também consigo desenvolver projetos simples de front-end. Atualmente, estou em busca da minha primeira oportunidade profissional na área de tecnologia, onde eu possa aplicar minha facilidade de aprendizado e minha paixão por tecnologia.",
       interestsTitle: "Interesses",
       interestsText:
-        "🎵 Apaixonado por música (estudando teoria musical e canto), demonstrando dedicação e disciplina.",
+        "Sou apaixonado por música, no momento estou estudando teoria musical e cantando no coral da minha igreja. Também gosto de jogar e de aprender coisas novas no geral, especialmente quando estão relacionadas à tecnologia. Além disso, jogo RPG de mesa — gosto muito de criar histórias, e é divertido desafiar meus amigos enquanto também sou desafiado por eles.",
     },
     skills: {
       title: "Habilidades Técnicas",

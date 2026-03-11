@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
+import profileImage from "../../assets/Perfil.jpeg";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../translations/translations";
 
@@ -27,11 +28,10 @@ export default function Dashboard() {
   }, []);
 
   const skills = {
-    languages: ['Java', 'HTML', 'CSS', 'JavaScript', 'MySQL', 'C++', 'Kotlin', 'Python'],
-    frameworks: ['React', 'Vue/Vite', 'Spring Boot'],
+    languages: ['Java', 'MySQL', 'C++', 'Kotlin', 'Python'],
+    frameworks: ['React', 'Vue/Vite', 'Spring Boot', 'JPA/Hibernate','FastAPI'],
     tools: ['Git/GitHub', 'Microsoft Copilot', 'IntelliJ', 'VSCode', 'Microsoft Office Suite', 'Power BI'],
     methodologies: ['Scrum'],
-    concepts: ['Back-end Development', 'Front-end Development', 'Digital Environment Routines']
   };
 
   return (
@@ -46,8 +46,12 @@ export default function Dashboard() {
             <p className="hero-location">📍 {t.hero.location}</p>
           </div>
           <div className="hero-image">
-            <div className="profile-placeholder"><span>PHCN</span></div>
-          </div>
+            <img
+              src={profileImage}
+              alt="Pedro Henrique Carvalho"
+              className="profile-image"
+            />
+        </div>
         </div>
         <div className="scroll-indicator">
           <span>{t.hero.scroll}</span>
@@ -68,24 +72,6 @@ export default function Dashboard() {
             <h3>{t.about.interestsTitle}</h3>
             <p>{t.about.interestsText}</p>
           </div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="content-section skills-section">
-        <div className="section-header">
-          <h2>{t.skills.title}</h2>
-          <div className="section-divider"></div>
-        </div>
-        <div className="skills-grid">
-          {Object.entries(skills).map(([category, skillList]) => (
-            <div key={category} className="skill-category">
-              <h3>{t.skills[category]}</h3>
-              <div className="skill-tags">
-                {skillList.map((skill, idx) => <span key={idx} className="skill-tag">{skill}</span>)}
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
@@ -132,6 +118,24 @@ export default function Dashboard() {
                     )}
                   </div>
                 )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="content-section skills-section">
+        <div className="section-header">
+          <h2>{t.skills.title}</h2>
+          <div className="section-divider"></div>
+        </div>
+        <div className="skills-grid">
+          {Object.entries(skills).map(([category, skillList]) => (
+            <div key={category} className="skill-category">
+              <h3>{t.skills[category]}</h3>
+              <div className="skill-tags">
+                {skillList.map((skill, idx) => <span key={idx} className="skill-tag">{skill}</span>)}
               </div>
             </div>
           ))}

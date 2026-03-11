@@ -73,18 +73,17 @@ section.visible {
   align-items: center;
 }
 
-.profile-placeholder {
-  width: 200px;
-  height: 200px;
-  background: var(--gradient-primary);
+.profile-image {
+  width: 320px;
+  height: 320px;
+
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--bg-light);
+  object-fit: cover;
+  object-position: center 23%;
+
+  border: 3px solid var(--primary-color);
   box-shadow: var(--shadow-xl);
+
   animation: float 3s ease-in-out infinite;
 }
 
