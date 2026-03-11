@@ -94,6 +94,11 @@ export const translations = {
           description: "Frontend for a parking management system",
           link: "https://github.com/DiegoGenuino/frontend-inpark"
         },
+        {
+          title: "Personal Portfolio",
+          description: "Want to see how this portfolio was made? Check out the code on GitHub!",
+          link: "https://github.com/pedrohcnascimento/PortfolioPHCN"
+        }
       ],
     },
     contact: { title: "Contact Information", location: "Location" },
@@ -196,6 +201,11 @@ export const translations = {
             "Frontend para um sistema de gerenciamento de estacionamentos",
           link: "https://github.com/DiegoGenuino/frontend-inpark"
         },
+        {
+          title: "Portfólio Pessoal",
+          description: "Quer ver como este portfólio foi feito? Confira o código no GitHub!",
+          link: "https://github.com/pedrohcnascimento/PortfolioPHCN"
+        }
       ],
     },
     contact: { title: "Informações de Contato", location: "Localização" },
