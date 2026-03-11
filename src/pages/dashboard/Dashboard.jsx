@@ -221,6 +221,18 @@ export default function Dashboard() {
               <span>São Paulo, Brazil</span>
             </div>
           </div>
+          <div className="contact-item resume-download">
+            <div className="contact-icon">📄</div>
+            <div className="contact-info">
+              <h3>{t.contact.resume}</h3>
+              <a 
+                href={language === 'en' ? '/PedroCVEnglish.pdf' : '/PedroCV.pdf'} 
+                download={language === 'en' ? 'Pedro_Carvalho_Resume.pdf' : 'Pedro_Carvalho_Curriculo.pdf'}
+              >
+                {t.contact.download}
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </div>

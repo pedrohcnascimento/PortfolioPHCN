@@ -538,7 +538,7 @@ section.visible {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--spacing-xl);
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 

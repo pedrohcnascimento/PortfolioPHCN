@@ -101,7 +101,7 @@ export const translations = {
         }
       ],
     },
-    contact: { title: "Contact Information", location: "Location" },
+    contact: { title: "Contact Information", location: "Location", resume: "Resume", download: "Download PDF" },
   },
   pt: {
     hero: {
@@ -208,6 +208,6 @@ export const translations = {
         }
       ],
     },
-    contact: { title: "Informações de Contato", location: "Localização" },
+    contact: { title: "Informações de Contato", location: "Localização", resume: "Currículo", download: "Baixar PDF" },
   },
 };
