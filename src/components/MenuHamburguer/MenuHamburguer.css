@@ -1,11 +1,66 @@
 @import '../../variables.css';
 
-/* Floating Hamburger Button */
+/* Desktop Floating Header */
+.desktop-header {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  padding: 8px 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+}
+
+.desktop-menu {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.desktop-link {
+  background: none;
+  border: none;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.desktop-link:hover {
+  color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.desktop-link.active {
+  background: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(136, 195, 60, 0.3);
+}
+
+/* Mobile Hamburger Button */
 .floating-hamburger {
   position: fixed;
   top: 20px;
   left: 20px;
-  display: flex;
+  display: none; /* Hidden by default on desktop */
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
@@ -18,10 +73,6 @@
   transition: all 0.3s ease-in-out;
 }
 
-.floating-hamburger:hover {
-  transform: scale(1.1);
-}
-
 .bar {
   height: 3px;
   width: 100%;
@@ -30,7 +81,6 @@
   transition: all 0.3s ease-in-out;
 }
 
-/* Hamburger Animation */
 .floating-hamburger.active .bar:nth-child(2) {
   opacity: 0;
 }
@@ -43,7 +93,7 @@
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* Menu Overlay */
+/* Mobile Menu Overlay */
 .menu-overlay {
   position: fixed;
   top: 0;
@@ -64,21 +114,13 @@
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 
 .nav-menu {
@@ -89,10 +131,6 @@
   margin: 0;
   padding: 0;
   text-align: center;
-}
-
-.nav-item-wrapper {
-  list-style: none;
 }
 
 .nav-link {
@@ -115,4 +153,15 @@
 .nav-link.active {
   color: var(--accent-color);
   background: rgba(136, 195, 60, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .desktop-header {
+    display: none;
+  }
+  
+  .floating-hamburger {
+    display: flex;
+  }
 }

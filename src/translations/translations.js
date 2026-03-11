@@ -101,6 +101,15 @@ export const translations = {
       ],
     },
     contact: { title: "Contact Information", location: "Location", resume: "Resume", download: "Download PDF" },
+    menu: {
+      home: "Home",
+      about: "About",
+      skills: "Skills",
+      experience: "Experience",
+      education: "Education",
+      projects: "Projects",
+      contact: "Contact"
+    },
   },
   pt: {
     hero: {
@@ -208,5 +217,14 @@ export const translations = {
       ],
     },
     contact: { title: "Informações de Contato", location: "Localização", resume: "Currículo", download: "Baixar PDF" },
+    menu: {
+      home: "Início",
+      about: "Sobre",
+      skills: "Habilidades",
+      experience: "Experiência",
+      education: "Educação",
+      projects: "Projetos",
+      contact: "Contato"
+    },
   },
 };
