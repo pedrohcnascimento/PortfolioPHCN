@@ -134,7 +134,7 @@ export const translations = {
       languages: "Linguagens de Programação",
       frameworks: "Frameworks e Bibliotecas",
       tools: "Ferramentas e Tecnologias",
-      methodologies: "Metodologias Ágeis",
+      methodologies: "Metodologias",
       concepts: "Conceitos Fundamentais",
     },
     experience: {
