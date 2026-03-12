@@ -31,7 +31,7 @@ export default function Dashboard() {
     languages: ['Java', 'MySQL', 'C++', 'Kotlin', 'Python'],
     frameworks: ['React', 'Vue/Vite', 'Spring Boot', 'JPA/Hibernate','FastAPI'],
     tools: ['Git/GitHub', 'Microsoft Copilot', 'IntelliJ', 'VSCode', 'Microsoft Office Suite', 'Power BI'],
-    methodologies: ['Scrum'],
+    methodologies: ['Scrum','Model-View-Controller', 'Test Driven Development', 'Object-Oriented Programming','Clean Code Principles', 'Domain-Driven Design', 'APIs Rest'],
   };
 
   return (
